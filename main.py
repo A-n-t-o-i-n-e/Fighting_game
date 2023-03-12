@@ -30,10 +30,12 @@ while running:
         game.player1.move_left()
 
     # si la touche dans le dictionnaire est = a True  alors faire l'action qui lui est assigné (p2)
-    if game.pressed.get(pygame.K_RIGHT) and game.player2.rect.x < screen.get_width()- game.player2.rect.width:
+    elif game.pressed.get(pygame.K_RIGHT) and game.player2.rect.x < screen.get_width()- game.player2.rect.width:
         game.player2.move_right()
     elif game.pressed.get(pygame.K_LEFT) and game.player2.rect.x > 0:
         game.player2.move_left()
+
+    game.gravity()
 
     pygame.display.flip()  # maj
 
@@ -48,5 +50,5 @@ while running:
             game.pressed[event.key] = True
         elif event.type == pygame.KEYUP:
             game.pressed[event.key] = False
-
+    game.clock.tick(1)
 

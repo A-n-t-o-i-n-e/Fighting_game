@@ -7,11 +7,11 @@ class Player(pygame.sprite.Sprite):
         self.hp = 100
         self.hp_max = 100
         self.dmg = 10
-        self.v = 1
+        self.v = 4
         self.img = pygame.image.load('assets/player.png')
         self.rect = self.img.get_rect()
         self.rect.x = x
-        self.rect.y = 430
+        self.rect.y = 30
 
         '''# Sauter
         self.a_jump = 0
